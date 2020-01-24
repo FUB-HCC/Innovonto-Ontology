@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/innovonto/types#"
+    xml:base="http://purl.org/innovonto/types#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:vann="http://purl.org/vocab/vann/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:inov="http://purl.org/innovonto/types#"
+    xmlns:gi2mo="http://purl.org/gi2mo/ns#"
+    >
+    <owl:Ontology rdf:about="http://purl.org/innovonto/types">
+      <dc:title xml:lang="en">Innovonto Ontology</dc:title>
+      <dc:description xml:lang="en">A RDF vocabulary describing ideas in the context of large scale ideation.</dc:description>
+      <rdfs:isDefinedBy>Maximilian Mackeprang, Freie Universität Berlin</rdfs:isDefinedBy>
+    <rdfs:isDefinedBy>Human-Centered Computing Lab (HCC.lab), Freie Universität Berlin</rdfs:isDefinedBy>
+      <vann:preferredNamespacePrefix xml:lang="en">inov</vann:preferredNamespacePrefix>
+      <owl:versionIRI rdf:resource="http://purl.org/innovonto/types/0.0.1"/>
+      <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0.1</owl:versionInfo>
+    </owl:Ontology>
+    
+    
+</rdf:RDF>
+ 
