@@ -1,25 +1,115 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.org/innovonto/types#"
-    xml:base="http://purl.org/innovonto/types#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:vann="http://purl.org/vocab/vann/"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:inov="http://purl.org/innovonto/types#"
-    xmlns:gi2mo="http://purl.org/gi2mo/ns#"
-    >
+     xml:base="http://purl.org/innovonto/types"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:inov="http://purl.org/innovonto/types#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:gi2mo="http://purl.org/gi2mo/ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="http://purl.org/innovonto/types">
-      <dc:title xml:lang="en">Innovonto Ontology</dc:title>
-      <dc:description xml:lang="en">A RDF vocabulary describing ideas in the context of large scale ideation.</dc:description>
-      <rdfs:isDefinedBy>Maximilian Mackeprang, Freie Universität Berlin</rdfs:isDefinedBy>
-    <rdfs:isDefinedBy>Human-Centered Computing Lab (HCC.lab), Freie Universität Berlin</rdfs:isDefinedBy>
-      <vann:preferredNamespacePrefix xml:lang="en">inov</vann:preferredNamespacePrefix>
-      <owl:versionIRI rdf:resource="http://purl.org/innovonto/types/0.0.1"/>
-      <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0.1</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.org/innovonto/types/0.0.1"/>
+        <dc:creator>Human-Centered Computing Lab (HCC.lab), Freie Universität Berlin</dc:creator>
+        <dc:description xml:lang="en">A RDF vocabulary describing ideas in the context of large scale ideation.</dc:description>
+        <dc:title xml:lang="en">Innovonto Ontology</dc:title>
+        <terms:bibliographicCitation>Maximilian Mackeprang.2020-01-24.INOV: The Innovonto Ontology. 0.0.1, purl.org/innovonto/types/[HTML]</terms:bibliographicCitation>
+        <terms:license>GNU Affero General Public License v3 (AGPL-3.0)</terms:license>
+        <vann:preferredNamespacePrefix xml:lang="en">inov</vann:preferredNamespacePrefix>
+        <schema:contributor>Abderrahmane Khiat, Fraunhofer IAIS Bonn</schema:contributor>
+        <schema:contributor>Maximilian Mackeprang, Freie Universität Berlin</schema:contributor>
+        <rdfs:comment>One of the main processes in large-scale ideation is the generation of ideas for new applications of technologies. This process can be implemented using collaborative ideation platforms (i.e. online large-scale platforms for generating ideas), which has shown remarkable success so far: Leveraging the crowd allows the generation of a large number of ideas and the heterogeneity of the crowd increases the potential for a high diversity of ideas due to participants&apos; different backgrounds. However, finding valuable ideas has proven challenging: Related work on open innovation challenges found out that the users generate ideas without some form of inspiration leads to mundane and repetitive ideas. Furthermore, the large amount of ideas makes it unfeasible to check every idea manually.
+
+At the Human-Centered-Computing lab, we research how to address these challenges by leveraging semantic technologies and human-computer collaboration. Our approach is based on three key steps:
+
+Understanding users&apos; ideas
+
+We obtain information about the users&apos; ideas, by extracting entities from the submitted idea text and link them to existing knowledge bases (e.g. Wikidata and Dbpedia, using SPARQL). By using an interactive validation approach, we get insights about the ideas without distracting the ideators from their main task of generating ideas.
+
+Improving the ideation outcome for each individual user
+
+Related work has shown that providing exemplars (inspiring ideas of others) greatly improves the idea generation outcome in terms of diversity and novelty of the generated ideas. We carry out research on constructing a semantic model (i.e. extracting super-classes, calculating conceptual similarity, finding relationships between ideas) and using it to choose effective inspirations for the ideators.
+
+Improving the understandability of idea generation results
+
+The availability of semantic knowledge about the ideas will enable us to present the outcome of an idea generation result in various visualizations. For example, calculating the conceptual similarity between ideas allows us to build a two-dimensional representation of all ideas, the so-called &apos;solution map&apos;. This solution map can be used to get a quick overview over group efforts and to detect idea clusters.
+
+By building a semantic model of the ideas generated, we are also taking additional steps towards our greater vision: Building an interactive system that, based on an idea-based knowledge graph, actively collaborates with the user to generate new and valuable ideas (so-called Human-Computer Co-Creativity). This visionary system could provide automatic recombination of ideas, adaptive system behavior based on the users mental state or customized inspiration provision based on idea relationships.</rdfs:comment>
+        <rdfs:seeAlso>http://purl.org/innovonto/project</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0.1</owl:versionInfo>
     </owl:Ontology>
     
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
     
+
+
+    <!-- http://purl.org/dc/elements/1.1/abstract -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://schema.org/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/contributor"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
 </rdf:RDF>
- 
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
