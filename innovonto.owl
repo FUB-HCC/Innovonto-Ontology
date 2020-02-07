@@ -120,7 +120,9 @@ By building a semantic model of the ideas generated, we are also taking addition
 
     <!-- http://purl.org/dc/terms/bibliographicCitation -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -243,6 +245,14 @@ By building a semantic model of the ideas generated, we are also taking addition
     
 
 
+    <!-- http://purl.org/innovonto/types#markdownString -->
+
+    <rdfs:Datatype rdf:about="http://purl.org/innovonto/types#markdownString">
+        <rdfs:comment>markdown String indicates that the content of this property should be rendered using markdown.</rdfs:comment>
+    </rdfs:Datatype>
+    
+
+
     <!-- http://www.w3.org/2001/XMLSchema#date -->
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
@@ -264,7 +274,15 @@ By building a semantic model of the ideas generated, we are also taking addition
 
     <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasBackgroundOnboarding">
         <rdfs:domain rdf:resource="http://purl.org/innovonto/types#ChallengePreviewPage"/>
-        <rdfs:range rdf:resource="http://purl.org/innovonto/types#TaskOnboarding"/>
+        <rdfs:range rdf:resource="http://purl.org/innovonto/types#BackgroundOnboarding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/innovonto/types#hasChallenge -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasChallenge">
+        <rdfs:range rdf:resource="http://purl.org/innovonto/types#Challenge"/>
     </owl:ObjectProperty>
     
 
@@ -272,8 +290,18 @@ By building a semantic model of the ideas generated, we are also taking addition
     <!-- http://purl.org/innovonto/types#hasChallengePreviewPage -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasChallengePreviewPage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/innovonto/types#Challenge"/>
         <rdfs:range rdf:resource="http://purl.org/innovonto/types#ChallengePreviewPage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/innovonto/types#hasComprehensionQuestion -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasComprehensionQuestion">
+        <rdfs:domain rdf:resource="http://purl.org/innovonto/types#ChallengeTutorial"/>
+        <rdfs:range rdf:resource="http://purl.org/innovonto/types#ComprehensionQuestion"/>
     </owl:ObjectProperty>
     
 
@@ -287,14 +315,6 @@ By building a semantic model of the ideas generated, we are also taking addition
     
 
 
-    <!-- http://purl.org/innovonto/types#hasEstimatedTaskDuration -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasEstimatedTaskDuration">
-        <rdfs:domain rdf:resource="http://purl.org/innovonto/types#ChallengePreviewPage"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/innovonto/types#hasIdeaContest -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasIdeaContest">
@@ -304,10 +324,19 @@ By building a semantic model of the ideas generated, we are also taking addition
     
 
 
+    <!-- http://purl.org/innovonto/types#hasResearchDescription -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasResearchDescription">
+        <rdfs:range rdf:resource="http://purl.org/innovonto/types#ResearchDescription"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/innovonto/types#hasSubtasks -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/innovonto/types#hasSubtasks">
-        <rdfs:domain rdf:resource="http://purl.org/innovonto/types#ChallengePreviewPage"/>
+        <rdfs:domain rdf:resource="http://purl.org/innovonto/types#TaskOnboarding"/>
+        <rdfs:range rdf:resource="http://purl.org/innovonto/types#TaskList"/>
     </owl:ObjectProperty>
     
 
@@ -350,9 +379,7 @@ By building a semantic model of the ideas generated, we are also taking addition
 
     <!-- http://purl.org/dc/terms/bibliographicCitation -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation">
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
     
 
 
@@ -432,6 +459,32 @@ By building a semantic model of the ideas generated, we are also taking addition
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/valid">
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/innovonto/types#descriptiveImageUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/innovonto/types#descriptiveImageUrl">
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/URI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/innovonto/types#hasEstimatedTaskDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/innovonto/types#hasEstimatedTaskDuration">
+        <rdfs:domain rdf:resource="http://purl.org/innovonto/types#TaskOnboarding"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>estimated Task Duration in Seconds</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/innovonto/types#questionText -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/innovonto/types#questionText">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -611,15 +664,41 @@ By building a semantic model of the ideas generated, we are also taking addition
     
 
 
+    <!-- http://purl.org/innovonto/types#Answer -->
+
+    <owl:Class rdf:about="http://purl.org/innovonto/types#Answer"/>
+    
+
+
     <!-- http://purl.org/innovonto/types#BackgroundOnboarding -->
 
-    <owl:Class rdf:about="http://purl.org/innovonto/types#BackgroundOnboarding"/>
+    <owl:Class rdf:about="http://purl.org/innovonto/types#BackgroundOnboarding">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/gi2mo/ns#content"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
     <!-- http://purl.org/innovonto/types#Challenge -->
 
     <owl:Class rdf:about="http://purl.org/innovonto/types#Challenge">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/innovonto/types#hasChallengePreviewPage"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/innovonto/types#ChallengePreviewPage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A challenge describes a configuration that is used to collect ideas. A challenge defines what to show to the user as input and how the brainstorming-session is done.</rdfs:comment>
     </owl:Class>
     
@@ -629,14 +708,121 @@ By building a semantic model of the ideas generated, we are also taking addition
 
     <owl:Class rdf:about="http://purl.org/innovonto/types#ChallengePreviewPage">
         <rdfs:comment>A Challenge Preview Page includes all Informations about a challenge that are needed in order to understand if it&apos;s something you would work at or not.</rdfs:comment>
-        <rdfs:label>Challenge Preview Page</rdfs:label>
+        <rdfs:label>ChallengePreviewPage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/innovonto/types#ChallengeTutorial -->
+
+    <owl:Class rdf:about="http://purl.org/innovonto/types#ChallengeTutorial">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/innovonto/types#hasResearchDescription"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/innovonto/types#ResearchDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A challenge tutorial contains information for participants regarding the current challenge and how to use the software. In the current version, a challenge consists of a ResearchDescription and a Comprehension Question (optional)</rdfs:comment>
+        <rdfs:label>Challenge Tutorial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/innovonto/types#ComprehensionQuestion -->
+
+    <owl:Class rdf:about="http://purl.org/innovonto/types#ComprehensionQuestion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/innovonto/types#Question"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/innovonto/types#questionText"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/innovonto/types#ComprehensionQuestionAnswer -->
+
+    <owl:Class rdf:about="http://purl.org/innovonto/types#ComprehensionQuestionAnswer">
+        <rdfs:subClassOf rdf:resource="http://purl.org/innovonto/types#Answer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/gi2mo/ns#content"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.holygoat.co.uk/owl/redwood/0.1/tags/name"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
 
     <!-- http://purl.org/innovonto/types#DataInformation -->
 
-    <owl:Class rdf:about="http://purl.org/innovonto/types#DataInformation"/>
+    <owl:Class rdf:about="http://purl.org/innovonto/types#DataInformation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/innovonto/types#markdownString"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/innovonto/types#Question -->
+
+    <owl:Class rdf:about="http://purl.org/innovonto/types#Question"/>
+    
+
+
+    <!-- http://purl.org/innovonto/types#ResearchDescription -->
+
+    <owl:Class rdf:about="http://purl.org/innovonto/types#ResearchDescription">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/gi2mo/ns#hasIdeaContest"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/gi2mo/ns#IdeaContest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/created"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/innovonto/types#markdownString"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/innovonto/types#descriptiveImageUrl"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/dc/terms/URI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A research description describes in detail the technology used within a challenge.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -650,9 +836,34 @@ By building a semantic model of the ideas generated, we are also taking addition
     
 
 
+    <!-- http://purl.org/innovonto/types#TaskList -->
+
+    <owl:Class rdf:about="http://purl.org/innovonto/types#TaskList"/>
+    
+
+
     <!-- http://purl.org/innovonto/types#TaskOnboarding -->
 
-    <owl:Class rdf:about="http://purl.org/innovonto/types#TaskOnboarding"/>
+    <owl:Class rdf:about="http://purl.org/innovonto/types#TaskOnboarding">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/description"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/dc/terms/title"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/innovonto/types#hasEstimatedTaskDuration"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -1447,11 +1658,10 @@ By building a semantic model of the ideas generated, we are also taking addition
 
     <!-- http://purl.org/dc/terms/issued -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/dc/terms/issued">
         <terms:description xml:lang="en">Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty.</terms:description>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-07-11</terms:issued>
-    </owl:DatatypeProperty>
+    </owl:NamedIndividual>
     
 
 
@@ -1705,8 +1915,8 @@ By building a semantic model of the ideas generated, we are also taking addition
 
     <rdf:Description rdf:about="http://purl.org/dc/terms/Agent">
         <rdfs:label xml:lang="en">Agent</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:comment xml:lang="en">A resource that acts or has the power to act.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/AgentClass">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -1725,8 +1935,8 @@ By building a semantic model of the ideas generated, we are also taking addition
         <rdfs:seeAlso rdf:resource="https://www.dublincore.org/specifications/dublin-core/dcmi-box/"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/FileFormat">
-        <rdfs:label xml:lang="en">File Format</rdfs:label>
         <rdfs:comment xml:lang="en">A digital resource format.</rdfs:comment>
+        <rdfs:label xml:lang="en">File Format</rdfs:label>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/Frequency">
@@ -1754,12 +1964,12 @@ By building a semantic model of the ideas generated, we are also taking addition
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/Jurisdiction">
         <rdfs:label xml:lang="en">Jurisdiction</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:comment xml:lang="en">The extent or range of judicial, law enforcement, or other authority.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/LicenseDocument">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:label xml:lang="en">License Document</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:comment xml:lang="en">A legal document giving official permission to do something with a resource.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/LinguisticSystem">
@@ -1779,8 +1989,8 @@ By building a semantic model of the ideas generated, we are also taking addition
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/MediaType">
         <rdfs:comment xml:lang="en">A file format or physical medium.</rdfs:comment>
-        <rdfs:label xml:lang="en">Media Type</rdfs:label>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+        <rdfs:label xml:lang="en">Media Type</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/MediaTypeOrExtent">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
@@ -1788,8 +1998,8 @@ By building a semantic model of the ideas generated, we are also taking addition
         <rdfs:label xml:lang="en">Media Type or Extent</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/MethodOfAccrual">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:comment xml:lang="en">A method by which resources are added to a collection.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:label xml:lang="en">Method of Accrual</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/MethodOfInstruction">
@@ -1809,8 +2019,8 @@ By building a semantic model of the ideas generated, we are also taking addition
         <rdfs:label xml:lang="en">Period of Time</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/PhysicalMedium">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:label xml:lang="en">Physical Medium</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:comment xml:lang="en">A physical material or carrier.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/PhysicalResource">
@@ -1836,8 +2046,8 @@ By building a semantic model of the ideas generated, we are also taking addition
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/RFC1766">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-        <rdfs:seeAlso rdf:resource="http://www.ietf.org/rfc/rfc1766.txt"/>
         <rdfs:comment xml:lang="en">The set of tags, constructed according to RFC 1766, for the identification of languages.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.ietf.org/rfc/rfc1766.txt"/>
         <rdfs:label xml:lang="en">RFC 1766</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/RFC3066">
@@ -1959,8 +2169,8 @@ By building a semantic model of the ideas generated, we are also taking addition
         <rdfs:label xml:lang="en">Date Issued</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/dc/terms/license">
-        <rdfs:label xml:lang="en">License</rdfs:label>
         <dcam:rangeIncludes rdf:resource="http://purl.org/dc/terms/LicenseDocument"/>
+        <rdfs:label xml:lang="en">License</rdfs:label>
         <rdfs:comment xml:lang="en">A legal document giving official permission to do something with the resource.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
