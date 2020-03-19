@@ -1,0 +1,44 @@
+.status div{
+display: none;
+}
+
+body{
+background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, span, a {
+font-family: 'Inria Sans', sans-serif;
+font-weight: normal;
+}
+
+h2 {
+color: #29893C;
+border-bottom: none !important;
+}
+
+a{
+color: rgb(56, 178, 54)
+}
+
+.container {
+width: 96%;
+max-width: 1000px;
+padding-left: 2%;
+padding-right: 2%;
+margin: 0;
+margin-left: auto;
+margin-right: auto;
+}
+
+a:active,a:hover {
+color: rgb(124, 234, 110)
+}
+
+body{
+padding-left: 0;
+padding-right: 0;
+}
+
+body{
+width: 100vw;
+}
